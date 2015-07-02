@@ -1,0 +1,32 @@
+# (SP)MPLAYER
+
+> **Modul je psaný pouze pro linuxové prostøedí.**
+
+[README](../README.md)
+
+
+## Screenshot
+
+
+### Parametry:
+
+	spmplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
+
+Parametr        | Poznámka                                      | Zápis
+----------------|-----------------------------------------------|-------------------------------------------
+`filename`      | Jméno videa. (povinný parametr)               | `filename="/media/my.mkv"`
+`position_time` | Èas ve kterém se má udìlat screenshot.        | `position_time="120"` (2 minuty v sekundách)
+`position_time` |                                               | `position_time="2:00"` (2 minuty ve formátu *hh:mm:ss*)
+`image_path`    | Cesta kam se má uložit screenshot.            | `image_path="/media/screenshots"`
+`jpeg_name`     | Vlastní jméno screenshotu.                    | `jpeg_name="my_own_image_name"`
+`image_quality` | Nastavení kvality obrázku. Defaultnì je 100%. | `image_quality=90`
+
+
+## Property:
+
+	spmplayer.screenshot(filename).image_location
+
+Property         | Poznámka                                   
+-----------------|---------------------------------------------------------
+`image_location` | Vrátí nám cestu a jméno obrázku kam se uložil screenshot.
+
