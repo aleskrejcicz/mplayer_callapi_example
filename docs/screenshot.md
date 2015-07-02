@@ -1,6 +1,6 @@
 # (SP)MPLAYER
 
-> **Modul je psan˝ pouze pro linuxovÈ prost¯edÌ.**
+> **Modul je psan√Ω pouze pro linuxov√© prost≈ôed√≠.**
 
 [README](../README.md)
 
@@ -12,21 +12,21 @@
 
 	spmplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
 
-Parametr        | Pozn·mka                                      | Z·pis
+Parametr        | Pozn√°mka                                      | Z√°pis
 ----------------|-----------------------------------------------|-------------------------------------------
-`filename`      | JmÈno videa. (povinn˝ parametr)               | `filename="/media/my.mkv"`
-`position_time` | »as ve kterÈm se m· udÏlat screenshot.        | `position_time="120"` (2 minuty v sekund·ch)
-`position_time` |                                               | `position_time="2:00"` (2 minuty ve form·tu *hh:mm:ss*)
-`image_path`    | Cesta kam se m· uloûit screenshot.            | `image_path="/media/screenshots"`
-`jpeg_name`     | VlastnÌ jmÈno screenshotu.                    | `jpeg_name="my_own_image_name"`
-`image_quality` | NastavenÌ kvality obr·zku. DefaultnÏ je 100%. | `image_quality=90`
+`filename`      | Jm√©no videa. (povinn√Ω parametr)               | `filename="/media/my.mkv"`
+`position_time` | ƒåas ve kter√©m se m√° udƒõlat screenshot.        | `position_time="120"` (2 minuty v sekund√°ch)
+`position_time` |                                               | `position_time="2:00"` (2 minuty ve form√°tu *hh:mm:ss*)
+`image_path`    | Cesta kam se m√° ulo≈æit screenshot.            | `image_path="/media/screenshots"`
+`jpeg_name`     | Vlastn√≠ jm√©no screenshotu.                    | `jpeg_name="my_own_image_name"`
+`image_quality` | Nastaven√≠ kvality obr√°zku. Defaultnƒõ je 100%. | `image_quality=90`
 
 
-## Property:
+### Property:
 
 	spmplayer.screenshot(filename).image_location
 
-Property         | Pozn·mka                                   
+Property         | Pozn√°mka                                   
 -----------------|---------------------------------------------------------
-`image_location` | Vr·tÌ n·m cestu a jmÈno obr·zku kam se uloûil screenshot.
+`image_location` | Vr√°t√≠ n√°m cestu a jm√©no obr√°zku kam se ulo≈æil screenshot.
 

@@ -1,6 +1,6 @@
 # (SP)MPLAYER
 
-> **Modul je psan˝ pouze pro linuxovÈ prost¯edÌ.**
+> **Modul je psan√Ω pouze pro linuxov√© prost≈ôed√≠.**
 
 [README](../README.md)
 
@@ -12,17 +12,19 @@
 
 	spmplayer.metadata(filename, data_options=None, mplayer_output=False)
 
-Parametr        | Pozn·mka                                      | Z·pis
-----------------|-----------------------------------------------|-------------------------------------------
-`filename`      | JmÈno videa. (povinn˝ parametr)               | `filename="/media/my.mkv"`
+Parametr         | Pozn√°mka                                                       | Z√°pis
+-----------------|----------------------------------------------------------------|--------------------------
+`filename`       | Jm√©no videa. (povinn√Ω parametr)                                | `filename="/media/my.mkv"`
+`data_options`   | Nastaven√≠ kter√° data se maj√≠ vyparsovat                        | `list = []`
+`data_options`   |                                                                | `dict = {}`
+`mplayer_output` | Pou≈æ√≠v√° se pro √∫ƒçely ladƒõn√≠. Defaultnƒõ je nastaveno na `false` | `mplayer_output=False`, `mplayer_output=True`
 
-
-## Property:
+### Property:
 
 	spmplayer.metadata(filename).meta_output
 	spmplayer.metadata(filename).mplayer_output
 
-Property         | Pozn·mka                                   
+Property         | Pozn√°mka                                   
 -----------------|---------------------------------------------------------
-`meta_output`    | Vr·tÌ zpracovan· data jako dictionary.
-`mplayer_output` | Vr·tÌ nezpracovan· data z mplayeru.
+`meta_output`    | Vr√°t√≠ zpracovan√° data jako dictionary.
+`mplayer_output` | Vr√°t√≠ nezpracovan√° data z mplayeru.
