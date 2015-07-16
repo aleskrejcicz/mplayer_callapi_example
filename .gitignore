@@ -2,14 +2,22 @@
 # Netbeans:
 /nbproject/
 
+
 # ============================================
 # PhpStorm:
 /.idea/
 
+
 # ============================================
-# Other:
+# Python:
 *.pyc
 __pycache__
 
+dist/
+*.egg-info/
+
+
+# ============================================
+# Other:
 /testingfolder/
 /testingfile.py
