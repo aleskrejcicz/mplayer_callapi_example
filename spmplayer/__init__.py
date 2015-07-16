@@ -4,4 +4,5 @@
 # Author: http://sefikail.cz
 # =============================================================
 
-from spmplayer.mplayerapi import metadata, screenshot
+from spmplayer.metadata import metadata
+from spmplayer.screenshot import screenshot
