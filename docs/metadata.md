@@ -10,21 +10,21 @@
 
 ### Parametry:
 
-	spmplayer.metadata(filename, data_options=None, mplayer_output=False)
+	spmplayer.metadata(filename, meta_name=None)
 
-Parametr         | Poznámka                                                       | Zápis
------------------|----------------------------------------------------------------|--------------------------
-`filename`       | Jméno videa. (povinný parametr)                                | `filename="/media/my.mkv"`
-`data_options`   | Nastavení která data se mají vyparsovat                        | `list = []`
-`data_options`   |                                                                | `dict = {}`
-`mplayer_output` | Používá se pro účely ladění. Defaultně je nastaveno na `false` | `mplayer_output=False`, `mplayer_output=True`
+Parametr      | Poznámka                                                       | Zápis
+--------------|----------------------------------------------------------------|--------------------------
+`filename`    | Jméno videa. (povinný parametr)                                | `filename="/media/my.mkv"`
+`meta_name`   | Nastavení která data se mají vyparsovat                        | `meta_name = ['ID_FILENAME']` (jako list)
+
 
 ### Property:
 
 	spmplayer.metadata(filename).meta_output
-	spmplayer.metadata(filename).mplayer_output
+	spmplayer.metadata(filename).raw_data
 
 Property         | Poznámka                                   
 -----------------|---------------------------------------------------------
 `meta_output`    | Vrátí zpracovaná data jako dictionary.
-`mplayer_output` | Vrátí nezpracovaná data z mplayeru.
+`raw_data`       | Vrátí nezpracovaná data z mplayeru.
+`supported_meta` | Vrátí seznam podporovaných hodnot

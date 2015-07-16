@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 import platform
 from setuptools import setup, find_packages
 
@@ -8,15 +7,12 @@ from setuptools import setup, find_packages
 if platform.system() == "Windows":
 	raise Exception('(SP)mplayer not supported "%s" os.' % platform.system())
 
-os.system("pip install https://github.com/sefikail/sptempdir/tarball/master")
-
-
 # @formatter:off (pycharm - no formatting)
 setup(
 	name='spmplayer',
 	
 	# https://packaging.python.org/en/latest/distributing.html#version
-	version='0.0.1',
+	version='0.0.2',
 	
 	# The project homepage
 	url='https://github.com/sefikail/spmplayer/',
@@ -30,6 +26,8 @@ setup(
 
 	packages=find_packages(exclude=['docs', 'tests', 'examples']),
 	include_package_data=True,
+	install_requires=['sptempdir>=0.1.3'],
+
 	download_url='https://github.com/sefikail/spmplayer/zipball/master',
 	
 	# https://packaging.python.org/en/latest/distributing.html#classifiers

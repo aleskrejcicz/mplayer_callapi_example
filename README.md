@@ -50,7 +50,7 @@ print('Image path:', ss.image_location)
 
 # Parametry funkce metadata: #
 
-	spmplayer.metadata(filename, data_options=None, mplayer_output=False)
+	spmplayer.metadata(filename, meta_name=None)
 
  * Podrobněji o funkci [metadata.](docs/metadata.md)
 
@@ -60,18 +60,24 @@ print('Image path:', ss.image_location)
 ```python
 import spmplayer
 
-sm = spmplayer.metadata('my.mkv', mplayer_output=True)
-print(sm.mplayer_output)
+sm = spmplayer.metadata('my.mkv')
+print(sm.supported_meta)
+print('--------------------')
+print(sm.raw_data)
 ```
 
-[ *Výstup konzole:* ](examples/mplayer_example_output.txt)
+*Výstup konzole:*
 
 	$ test_get_metadata.py
+	['video_format', 'filename', 'subtitle_lang', 'audio_lang', 'video_height', 'video_length', 'video_width']
+	--------------------
 	ID_CHAPTER_ID=0
 	ID_CHAPTER_0_START=0
 	ID_CHAPTER_0_END=33617
 	ID_CHAPTER_0_NAME=00:00:00.000
 	ID_CHAPTER_ID=1
+
+[ *Celý výstup ...* ](examples/example1-mplayer_rawdata.txt)
 
 
 ### Příklad 2:
@@ -79,7 +85,7 @@ print(sm.mplayer_output)
 ```python
 import spmplayer
 
-data_options = [
+meta_name = [
 	'ID_FILENAME',
 	'ID_AID',
 	'ID_SID',
@@ -88,46 +94,17 @@ data_options = [
 	'ID_LENGTH',
 	'ID_VIDEO_FORMAT'
 ]
-sm = spmplayer.metadata('my.mkv', data_options)
+sm = spmplayer.metadata('my.mkv', meta_name)
 print(sm.meta_output)
 ```
 
 *Výstup konzole:*
 
 	$ test_get_metadata.py
-	{'ID_SID': {'ID_SID_1_LANG': 'cze', 'ID_SID_0_LANG': 'cze'}, 
-	'ID_VIDEO_FORMAT': 'H264', 'ID_FILENAME': 'my.mkv', 'ID_LENGTH': '1345.05', 
-	'ID_VIDEO_WIDTH': '1280', 'ID_AID': {'ID_AID_0_LANG': 'cze', 'ID_AID_1_LANG': 'eng'}, 
-	'ID_VIDEO_HEIGHT': '720'}
+	{'video_height': '720', 'subtitle_lang': ['cze', 'cze'], 'filename': 'my.mkv', 'video_format': 'H264', 'video_length': '1345.05', 'video_width': '1280', 'audio_lang': ['cze', 'eng']}
 
 
 ### Příklad 3:
-
-```python
-import spmplayer
-
-data_options = {
-	'filename': 'ID_FILENAME',
-	'audio_lang': 'ID_AID',
-	'subtitle_lang': 'ID_SID',
-	'video_width': 'ID_VIDEO_WIDTH',
-	'video_height': 'ID_VIDEO_HEIGHT',
-	'video_length': 'ID_LENGTH',
-	'video_format': 'ID_VIDEO_FORMAT'
-}
-sm = spmplayer.metadata('my.mkv', data_options)
-print(sm.meta_output)
-```
-
-*Výstup konzole:*
-
-	$ test_get_metadata.py
-	{'video_width': '1280', 'video_height': '720', 
-	'subtitle_lang': ['cze', 'cze'], 'video_format': 'H264', 'video_length': '1345.05', 
-	'filename': 'my.mkv', 'audio_lang': ['cze', 'eng']}
-
-
-### Příklad 4:
 
 ```python
 import time
