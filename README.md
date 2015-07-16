@@ -86,13 +86,13 @@ print(sm.raw_data)
 import spmplayer
 
 meta_name = [
-	'ID_FILENAME',
-	'ID_AID',
-	'ID_SID',
-	'ID_VIDEO_WIDTH',
-	'ID_VIDEO_HEIGHT',
-	'ID_LENGTH',
-	'ID_VIDEO_FORMAT'
+	'filename',
+	'audio_lang',
+	'subtitle_lang',
+	'video_width',
+	'video_height',
+	'video_length',
+	'video_format'
 ]
 sm = spmplayer.metadata('my.mkv', meta_name)
 print(sm.meta_output)
