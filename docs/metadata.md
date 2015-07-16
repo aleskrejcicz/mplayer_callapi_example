@@ -22,6 +22,7 @@ Parametr      | Poznámka                                                       
 
 	spmplayer.metadata(filename).meta_output
 	spmplayer.metadata(filename).raw_data
+	spmplayer.metadata(filename).supported_meta
 
 Property         | Poznámka                                   
 -----------------|---------------------------------------------------------
