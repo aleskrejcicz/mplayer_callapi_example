@@ -110,7 +110,7 @@ print(sm.meta_output)
 import time
 import spmplayer
 
-meta_time = spmplayer.metadata('my.mkv', 'ID_LENGTH').meta_output['ID_LENGTH']
+meta_time = spmplayer.metadata(filename, 'video_length').meta_output['video_length']
 print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 ```
 
