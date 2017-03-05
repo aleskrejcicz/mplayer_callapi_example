@@ -126,7 +126,7 @@ print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 
 ### Licence:
 
-	https://creativecommons.org/licenses/by/3.0/
+	BSD
 
 -----------------------
 
