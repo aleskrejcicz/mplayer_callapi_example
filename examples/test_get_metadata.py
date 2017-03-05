@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import spmplayer  # pip install https://github.com/sefikail/spmplayer/tarball/master
+import spmplayer
 import time
 
 

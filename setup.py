@@ -7,29 +7,29 @@ from setuptools import setup, find_packages
 if platform.system() == "Windows":
 	raise Exception('(SP)mplayer not supported "%s" os.' % platform.system())
 
-# @formatter:off (pycharm - no formatting)
 setup(
 	name='spmplayer',
-	
+
 	# https://packaging.python.org/en/latest/distributing.html#version
 	version='0.0.2',
-	
+
 	# The project homepage
-	url='https://github.com/sefikail/spmplayer/',
+	url='https://github.com/aleskrejcicz/mplayer_callapi_example/',
 
 	# Author details
-	author='sefikail',
+	author='Ales Krejci',
 	author_email='aleskrejcicz@gmail.com',
 
 	# License
-	license="See: https://creativecommons.org/licenses/by/3.0/",
+	license='BSD',
+	platforms=['linux'],
 
 	packages=find_packages(exclude=['docs', 'tests', 'examples']),
 	include_package_data=True,
 	install_requires=['sptempdir>=0.1.3'],
 
-	download_url='https://github.com/sefikail/spmplayer/zipball/master',
-	
+	download_url='https://github.com/aleskrejcicz/mplayer_callapi_example/zipball/master',
+
 	# https://packaging.python.org/en/latest/distributing.html#classifiers
 	classifiers=[
 		'Operating System :: POSIX :: Linux',
@@ -42,4 +42,3 @@ setup(
 		'Programming Language :: Python :: 3.4',
 	],
 )
-# @formatter:on (pycharm - no formatting)

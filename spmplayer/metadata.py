@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # =============================================================
-# Author: http://sefikail.cz
+# Author: http://aleskrejci.cz
 # =============================================================
 # Manpage - MPlayer:
 # http://manpages.ubuntu.com/manpages/vivid/en/man1/mplayer.1.html

@@ -110,7 +110,7 @@ print(sm.meta_output)
 import time
 import spmplayer
 
-meta_time = spmplayer.metadata(filename, 'video_length').meta_output['video_length']
+meta_time = spmplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
 print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 ```
 
@@ -121,7 +121,7 @@ print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 
 ### Instalace:
 
-	pip install https://github.com/sefikail/spmplayer/zipball/master
+	pip install https://github.com/aleskrejcicz/mplayer_callapi_example/zipball/master
 
 
 ### Licence:
@@ -130,4 +130,4 @@ print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 
 -----------------------
 
-(SP)MPLAYER = **( S**[efikail](http://sefikail.cz) + **P**[ython](http://python.org) **)** + **MPLAYER**
+(SP)MPLAYER = **( S**imple **P**ython **)** **MPLAYER**
