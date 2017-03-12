@@ -17,7 +17,7 @@ Změna cesty kam se má screenshot uložit.
 ```python
 import mplayer
 
-ss = mplayer.screenshot('my.mkv', image_path='/home/user/Desktop', jpeg_name='my_image_name')
+ss = mplayer.screenshot('my_video.mkv', image_path='/home/user/Desktop', jpeg_name='my_image_name')
 print('Image path:', ss.image_location)
 ```
 
@@ -35,9 +35,9 @@ Property `image_location` nám pak vrátí místo uložení našich screenshotů
 ```python
 import mplayer
 
-ss = mplayer.screenshot('my.mkv', position_time='2:00', jpeg_name='my_img_1')
+ss = mplayer.screenshot('my_video.mkv', position_time='2:00', jpeg_name='my_img_1')
 print('Image path:', ss.image_location)
-ss = mplayer.screenshot('my.mkv', position_time='120', jpeg_name='my_img_2')
+ss = mplayer.screenshot('my_video.mkv', position_time='120', jpeg_name='my_img_2')
 print('Image path:', ss.image_location)	
 ```
 
@@ -60,7 +60,7 @@ print('Image path:', ss.image_location)
 ```python
 import mplayer
 
-sm = mplayer.metadata('my.mkv')
+sm = mplayer.metadata('my_video.mkv')
 print(sm.supported_meta)
 print('--------------------')
 print(sm.raw_data)
@@ -94,14 +94,14 @@ meta_name = [
 	'video_length',
 	'video_format'
 ]
-sm = mplayer.metadata('my.mkv', meta_name)
+sm = mplayer.metadata('my_video.mkv', meta_name)
 print(sm.meta_output)
 ```
 
 *Výstup konzole:*
 
 	$ test_get_metadata.py
-	{'video_height': '720', 'subtitle_lang': ['cze', 'cze'], 'filename': 'my.mkv', 'video_format': 'H264', 'video_length': '1345.05', 'video_width': '1280', 'audio_lang': ['cze', 'eng']}
+	{'video_height': '720', 'subtitle_lang': ['cze', 'cze'], 'filename': 'my_video.mkv', 'video_format': 'H264', 'video_length': '1345.05', 'video_width': '1280', 'audio_lang': ['cze', 'eng']}
 
 
 ### Příklad 3:
@@ -110,7 +110,7 @@ print(sm.meta_output)
 import time
 import mplayer
 
-meta_time = mplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
+meta_time = mplayer.metadata('my_video.mkv', 'video_length').meta_output['video_length']
 print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 ```
 

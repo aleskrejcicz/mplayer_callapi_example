@@ -10,7 +10,7 @@
 
 Parametr      | Poznámka                                                       | Zápis
 --------------|----------------------------------------------------------------|--------------------------
-`filename`    | Jméno videa. (povinný parametr)                                | `filename="/media/my.mkv"`
+`filename`    | Jméno videa. (povinný parametr)                                | `filename="/home/user/Desktop/my_video.mkv"`
 `meta_name`   | Nastavení která data se mají vyparsovat                        | `meta_name = ['filename']`
 
 

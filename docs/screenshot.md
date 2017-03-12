@@ -10,7 +10,7 @@
 
 Parametr        | Poznámka                                      | Zápis
 ----------------|-----------------------------------------------|-------------------------------------------
-`filename`      | Jméno videa. (povinný parametr)               | `filename="/media/my.mkv"`
+`filename`      | Jméno videa. (povinný parametr)               | `filename="/media/my_video.mkv"`
 `position_time` | Čas ve kterém se má udělat screenshot.        | `position_time="120"` (2 minuty v sekundách)
 `position_time` |                                               | `position_time="2:00"` (2 minuty ve formátu *hh:mm:ss*)
 `image_path`    | Cesta kam se má uložit screenshot.            | `image_path="/media/screenshots"`
