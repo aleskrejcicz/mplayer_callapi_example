@@ -1,6 +1,4 @@
-# (SP)MPLAYER
-
-> **Modul je psaný pouze pro linuxové prostředí.**
+# EXAMPLE MODULE FOR PYTHON
 
 [README](../README.md)
 
@@ -10,7 +8,7 @@
 
 ### Parametry:
 
-	spmplayer.metadata(filename, meta_name=None)
+	mplayer.metadata(filename, meta_name=None)
 
 Parametr      | Poznámka                                                       | Zápis
 --------------|----------------------------------------------------------------|--------------------------
@@ -20,9 +18,9 @@ Parametr      | Poznámka                                                       
 
 ### Property:
 
-	spmplayer.metadata(filename).meta_output
-	spmplayer.metadata(filename).raw_data
-	spmplayer.metadata(filename).supported_meta
+	mplayer.metadata(filename).meta_output
+	mplayer.metadata(filename).raw_data
+	mplayer.metadata(filename).supported_meta
 
 Property         | Poznámka                                   
 -----------------|---------------------------------------------------------

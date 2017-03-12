@@ -1,11 +1,11 @@
-# (SP)MPLAYER
+# EXAMPLE MODULE FOR PYTHON
 
 > **Modul je psaný pouze pro linuxové prostředí.**
 
 
 # Parametry funkce screenshot: #
 
-	spmplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
+	mplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
 
  * Podrobněji o funkci [screenshot.](docs/screenshot.md)
 
@@ -15,9 +15,9 @@
 Změna cesty kam se má screenshot uložit.
 
 ```python
-import spmplayer
+import mplayer
 
-ss = spmplayer.screenshot('my.mkv', image_path='/home/user/Desktop', jpeg_name='my_image_name')
+ss = mplayer.screenshot('my.mkv', image_path='/home/user/Desktop', jpeg_name='my_image_name')
 print('Image path:', ss.image_location)
 ```
 
@@ -33,11 +33,11 @@ Použití stejného času který je zapsán dvěma různými způsoby.
 Property `image_location` nám pak vrátí místo uložení našich screenshotů.
 
 ```python
-import spmplayer
+import mplayer
 
-ss = spmplayer.screenshot('my.mkv', position_time='2:00', jpeg_name='my_img_1')
+ss = mplayer.screenshot('my.mkv', position_time='2:00', jpeg_name='my_img_1')
 print('Image path:', ss.image_location)
-ss = spmplayer.screenshot('my.mkv', position_time='120', jpeg_name='my_img_2')
+ss = mplayer.screenshot('my.mkv', position_time='120', jpeg_name='my_img_2')
 print('Image path:', ss.image_location)	
 ```
 
@@ -50,7 +50,7 @@ print('Image path:', ss.image_location)
 
 # Parametry funkce metadata: #
 
-	spmplayer.metadata(filename, meta_name=None)
+	mplayer.metadata(filename, meta_name=None)
 
  * Podrobněji o funkci [metadata.](docs/metadata.md)
 
@@ -58,9 +58,9 @@ print('Image path:', ss.image_location)
 ### Příklad 1:
 
 ```python
-import spmplayer
+import mplayer
 
-sm = spmplayer.metadata('my.mkv')
+sm = mplayer.metadata('my.mkv')
 print(sm.supported_meta)
 print('--------------------')
 print(sm.raw_data)
@@ -83,7 +83,7 @@ print(sm.raw_data)
 ### Příklad 2:
 
 ```python
-import spmplayer
+import mplayer
 
 meta_name = [
 	'filename',
@@ -94,7 +94,7 @@ meta_name = [
 	'video_length',
 	'video_format'
 ]
-sm = spmplayer.metadata('my.mkv', meta_name)
+sm = mplayer.metadata('my.mkv', meta_name)
 print(sm.meta_output)
 ```
 
@@ -108,9 +108,9 @@ print(sm.meta_output)
 
 ```python
 import time
-import spmplayer
+import mplayer
 
-meta_time = spmplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
+meta_time = mplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
 print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 ```
 
@@ -127,7 +127,3 @@ print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))
 ### Licence:
 
 	BSD
-
------------------------
-
-(SP)MPLAYER = **( S**imple **P**ython **)** **MPLAYER**

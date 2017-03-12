@@ -14,7 +14,7 @@ import re
 import shlex
 import subprocess
 from shutil import move
-from spmplayer.metadata import metadata
+from mplayer.metadata import metadata
 
 
 class MPlayerScreenshotWrapper:

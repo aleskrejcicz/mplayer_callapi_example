@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import platform
 from setuptools import setup, find_packages
 
 
-if platform.system() == "Windows":
-	raise Exception('(SP)mplayer not supported "%s" os.' % platform.system())
-
 setup(
-	name='spmplayer',
+	name='mplayer',
 
 	# https://packaging.python.org/en/latest/distributing.html#version
 	version='0.0.2',

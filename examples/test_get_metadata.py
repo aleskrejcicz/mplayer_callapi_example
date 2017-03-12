@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import spmplayer
+import mplayer
 import time
 
 
@@ -9,7 +9,7 @@ print("========================================================")
 print("Example 1:")
 print("---------")
 
-sm = spmplayer.metadata('my.mkv')
+sm = mplayer.metadata('my.mkv')
 print(sm.supported_meta)
 print('--------------------')
 print(sm.raw_data)
@@ -30,7 +30,7 @@ meta_name = [
 	'video_format'
 ]
 # @formatter:on (pycharm - no formatting)
-sm = spmplayer.metadata('my.mkv', meta_name)
+sm = mplayer.metadata('my.mkv', meta_name)
 print(sm.meta_output)
 
 #
@@ -38,5 +38,5 @@ print("========================================================")
 print("Example 3:")
 print("---------")
 
-meta_time = spmplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
+meta_time = mplayer.metadata('my.mkv', 'video_length').meta_output['video_length']
 print('Video length:', time.strftime("%H:%M:%S", time.gmtime(float(meta_time))))

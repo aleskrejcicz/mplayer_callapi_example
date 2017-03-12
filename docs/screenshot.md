@@ -1,6 +1,4 @@
-# (SP)MPLAYER
-
-> **Modul je psaný pouze pro linuxové prostředí.**
+# EXAMPLE MODULE FOR PYTHON
 
 [README](../README.md)
 
@@ -10,7 +8,7 @@
 
 ### Parametry:
 
-	spmplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
+	mplayer.screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100)
 
 Parametr        | Poznámka                                      | Zápis
 ----------------|-----------------------------------------------|-------------------------------------------
@@ -24,7 +22,7 @@ Parametr        | Poznámka                                      | Zápis
 
 ### Property:
 
-	spmplayer.screenshot(filename).image_location
+	mplayer.screenshot(filename).image_location
 
 Property         | Poznámka                                   
 -----------------|---------------------------------------------------------

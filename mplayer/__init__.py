@@ -4,5 +4,5 @@
 # Author: http://aleskrejci.cz
 # =============================================================
 
-from spmplayer.metadata import metadata
-from spmplayer.screenshot import screenshot
+from mplayer.metadata import metadata
+from mplayer.screenshot import screenshot
