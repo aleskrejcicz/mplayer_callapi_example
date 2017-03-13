@@ -10,10 +10,10 @@
 
 Parametr        | Poznámka                                      | Zápis
 ----------------|-----------------------------------------------|-------------------------------------------
-`filename`      | Jméno videa. (povinný parametr)               | `filename="/media/my_video.mkv"`
+`filename`      | Jméno videa. (povinný parametr)               | `filename="/home/user/Desktop/my_video.mkv"`
 `position_time` | Čas ve kterém se má udělat screenshot.        | `position_time="120"` (2 minuty v sekundách)
 `position_time` |                                               | `position_time="2:00"` (2 minuty ve formátu *hh:mm:ss*)
-`image_path`    | Cesta kam se má uložit screenshot.            | `image_path="/media/screenshots"`
+`image_path`    | Cesta kam se má uložit screenshot.            | `image_path="/home/user/Desktop/screenshots"`
 `jpeg_name`     | Vlastní jméno screenshotu.                    | `jpeg_name="my_own_image_name"`
 `image_quality` | Nastavení kvality obrázku. Defaultně je 100%. | `image_quality=90`
 

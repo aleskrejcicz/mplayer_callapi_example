@@ -44,8 +44,8 @@ print('Image path:', ss.image_location)
 *Výstup konzole:*
 
 	$ test_create_screenshot.py
-	Image path: /media/screenshots/my_img_1.jpg
-	Image path: /media/screenshots/my_img_2.jpg
+	Image path: /home/user/Desktop/screenshots/my_img_1.jpg
+	Image path: /home/user/Desktop/screenshots/my_img_2.jpg
 
 
 # Parametry funkce metadata: #
