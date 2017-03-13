@@ -27,7 +27,8 @@ class MPlayerScreenshotWrapper:
 
 
 def __exception_msg_image(filename, position_time):
-	if re.match(r'^[0-9:]+$', position_time):
+	file_match = re.match(r'^[0-9:]+$', position_time)
+	if file_match:
 		time_split = position_time.split(":")
 		list_reverse = time_split[::-1]  # List reverse
 		list_str_to_int = [int(i) for i in list_reverse]  # Str to int
@@ -50,10 +51,10 @@ def screenshot(filename, position_time=30, image_path=None, jpeg_name=None, imag
 			image_path = os.getcwd()
 
 		if jpeg_name is None:
-			jpeg_name = 'screenshot.jpg'
-		else:
-			if not jpeg_name.endswith('.jpg'):
-				jpeg_name += '.jpg'
+			jpeg_name = 'screenshot'
+
+		if not jpeg_name.endswith('.jpg'):
+			jpeg_name += '.jpg'
 
 		with sptempdir.TemporaryDirectory(delete=True) as temp:
 			cmd = 'mplayer -ss 60 -msglevel all=-1 -nosound -frames 1 -ao null -vo jpeg:outdir="{tmp}":quality={quality} '.format(
