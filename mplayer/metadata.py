@@ -47,7 +47,7 @@ class MPlayerMetadataWrapper:
 
 def mplayer_output_data(filename):
 	if os.path.exists(filename):
-		cmd = 'mplayer ' + filename + ' -msglevel all=-1 -ao null -vo null -frames 1 -identify'
+		cmd = 'mplayer {filename} -msglevel all=-1 -ao null -vo null -frames 1 -identify'.format(filename=filename)
 		proc = subprocess.Popen(shlex.split(cmd), shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		return proc.stdout.read()
 	else:
