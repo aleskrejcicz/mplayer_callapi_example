@@ -26,7 +26,7 @@ class MPlayerScreenshotWrapper:
 		return self.image_path
 
 
-def image_not_exist_warning(filename, position_time):
+def __exception_msg_image(filename, position_time):
 	if re.match(r'^[0-9:]+$', position_time):
 		time_split = position_time.split(":")
 		list_reverse = time_split[::-1]  # List reverse
@@ -46,26 +46,34 @@ def image_not_exist_warning(filename, position_time):
 def screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100):
 	position_time, image_quality = str(position_time), str(image_quality)  # Int to str
 	if os.path.exists(filename):
-		if not image_path or image_path is None:
+		if image_path is None:
 			image_path = os.getcwd()
 
-		if not jpeg_name or jpeg_name is None:
+		if jpeg_name is None:
 			jpeg_name = 'screenshot.jpg'
 		else:
 			if not jpeg_name.endswith('.jpg'):
 				jpeg_name += '.jpg'
 
 		with sptempdir.TemporaryDirectory(delete=True) as temp:
-			cmd = 'mplayer -ss ' + position_time + ' -msglevel all=-1 -nosound -frames 1 -ao null -vo jpeg:outdir="' + temp.name + '":quality=' + image_quality + ' ' + filename + ''
+			cmd = 'mplayer -ss 60 -msglevel all=-1 -nosound -frames 1 -ao null -vo jpeg:outdir="{tmp}":quality={quality} '.format(
+				tmp=temp.name,
+				quality=image_quality,
+				filename=filename
+			)
 			subprocess.call(shlex.split(cmd), shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-			source = os.path.join(temp.name, '00000001.jpg')
-			destination = os.path.join(image_path, jpeg_name)
-			if os.path.exists(source):
-				move(source, destination)
+			image_source = os.path.join(temp.name, '00000001.jpg')  # Mplayer screenshot file
+			image_destination = os.path.join(image_path, jpeg_name)
+			if os.path.exists(image_source):
+				if not os.path.exists(image_destination):
+					# It's all ok
+					move(image_source, image_destination)
+				else:
+					raise Exception('ERROR: Filename "%s" exists!' % image_destination)
 			else:
-				raise Exception(image_not_exist_warning(filename, position_time))
+				raise Exception(__exception_msg_image(filename, position_time))
 
-			return MPlayerScreenshotWrapper(destination)
+			return MPlayerScreenshotWrapper(image_destination)
 	else:
 		raise Exception('ERROR: Filename "%s" not exists!' % filename)
