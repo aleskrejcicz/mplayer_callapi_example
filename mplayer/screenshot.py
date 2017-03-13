@@ -45,7 +45,6 @@ def __exception_msg_image(filename, position_time):
 
 
 def screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100):
-	position_time, image_quality = str(position_time), str(image_quality)  # Int to str
 	if os.path.exists(filename):
 		if image_path is None:
 			image_path = os.getcwd()
