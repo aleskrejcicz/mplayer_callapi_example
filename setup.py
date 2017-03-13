@@ -7,7 +7,7 @@ setup(
 	name='mplayer',
 
 	# https://packaging.python.org/en/latest/distributing.html#version
-	version='0.0.2',
+	version='0.0.3',
 
 	# The project homepage
 	url='https://github.com/aleskrejcicz/mplayer_callapi_example/',

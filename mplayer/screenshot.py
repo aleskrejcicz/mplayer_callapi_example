@@ -27,24 +27,34 @@ class MPlayerScreenshotWrapper:
 
 
 def __exception_msg_image(filename, position_time):
-	file_match = re.match(r'^[0-9:]+$', position_time)
-	if file_match:
-		time_split = position_time.split(":")
-		list_reverse = time_split[::-1]  # List reverse
+	sep = ':'
+	num_splitted_time = len(position_time.split(sep))
+
+	generate_expression = sep.join(['(\d+)' for i in range(num_splitted_time)])
+	pattern = re.compile(r'^{exp}$'.format(exp=generate_expression))
+	file_match = pattern.match(position_time)
+	if file_match and num_splitted_time <= 3:  # max 3: hh:mm:ss
+		list_reverse = file_match.groups()[::-1]  # List reverse
 		list_str_to_int = [int(i) for i in list_reverse]  # Str to int
 
 		dict_time = dict(zip(['seconds', 'minutes', 'hours'], list_str_to_int))
-		get_seconds = timedelta(hours=dict_time.get("hours", 0), minutes=dict_time.get("minutes", 0), seconds=dict_time.get("seconds", 0)).seconds
+		sum_seconds = timedelta(
+			hours=dict_time.get("hours", 0),
+			minutes=dict_time.get("minutes", 0),
+			seconds=dict_time.get("seconds", 0)
+		).seconds
 
 		video_length = metadata(filename, 'video_length').meta_output['video_length']  # Video length in seconds
-		smallerr_video = int(float(video_length)) - 5  # Float to int, -5 second (often without picture)
-		if get_seconds >= smallerr_video:
-			return 'ERROR: Screenshot end time must be smaller. Example: position_time="' + str(smallerr_video) + '"'
-	else:
-		return 'ERROR: Invalid input syntax for position_time="hh:mm:ss".'
+		smallest_time = int(float(video_length)) - 5  # Float to int, -5 second (often without picture)
+		if sum_seconds >= smallest_time:
+			return 'ERROR: Screenshot end time must be smaller. Example: position_time="{sm_time}"'.format(sm_time=smallest_time)
+
+	return 'ERROR: Invalid input syntax for position_time="hh:mm:ss".'
 
 
 def screenshot(filename, position_time=30, image_path=None, jpeg_name=None, image_quality=100):
+	position_time = str(position_time)
+
 	if os.path.exists(filename):
 		if image_path is None:
 			image_path = os.getcwd()
@@ -56,7 +66,8 @@ def screenshot(filename, position_time=30, image_path=None, jpeg_name=None, imag
 			jpeg_name += '.jpg'
 
 		with sptempdir.TemporaryDirectory(delete=True) as temp:
-			cmd = 'mplayer -ss 60 -msglevel all=-1 -nosound -frames 1 -ao null -vo jpeg:outdir="{tmp}":quality={quality} '.format(
+			cmd = 'mplayer -ss {pos_time} -msglevel all=-1 -nosound -frames 1 -ao null -vo jpeg:outdir="{tmp}":quality={quality} '.format(
+				pos_time=position_time,
 				tmp=temp.name,
 				quality=image_quality,
 				filename=filename
